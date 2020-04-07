@@ -146,7 +146,7 @@ router.get('/auth/googlelogin',
 //   login page.  Otherwise, the primary route function function will be called,
 //   which, in this example, will redirect the user to the home page.
 router.get('/auth/googlecallback',
-    passport.authenticate('google', { failureRedirect: '/login', session: false }),
+    passport.authenticate('google', { failureRedirect: '/', session: false }),
     function (req, res) {
 
         console.log("TOKEN", req.user)

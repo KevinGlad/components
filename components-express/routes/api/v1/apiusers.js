@@ -4,6 +4,7 @@ const db = require('../../../db/mongoose')
 const bcrypt = require('bcrypt')
 const { makeToken, verifyToken } = require('../../../bin/jwt')
 const passport = require('passport')
+const {uriServer} = require("../../../bin/consts")
 
 /* GET  all users listing. */
 router.get('/', function (req, res, next) {
@@ -153,7 +154,7 @@ router.get('/auth/googlecallback',
         // google returns an array of emails, use the first one
         makeToken({ email: req.user.emails[0].value }) 
             .then(token => {
-                res.redirect(`http://localhost:3000?token=${token}`);
+                res.redirect(`${uriServer}?token=${token}`);
             })
             .catch(error => {
 

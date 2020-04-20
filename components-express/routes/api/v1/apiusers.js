@@ -84,13 +84,11 @@ router.put('/:id', function (req, res, next) {
             } else {
                 // update if found
                 db.replace(putObj)
-                    .then(response => {
-                        res.json(response)
-                    })
-
             }
 
-            res.json(response)
+        })
+        .then(response => {
+               res.json(response)
         })
         .catch(error => {
             res.status(500).json(error)

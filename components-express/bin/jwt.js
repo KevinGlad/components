@@ -13,7 +13,7 @@ function makeToken(user) {
                 reject(err)
 
             } else {
-                console.log(token)
+
                 resolve(token)
 
             }
@@ -31,7 +31,6 @@ function verifyToken(req, res, next) {
     // check to be sure I got the authorization header
     if (auth !== undefined) {
 
-        console.log(auth)
         // split the header into "bearer" and the token
         let [, token] = auth.split(" ")
 
@@ -47,8 +46,7 @@ function verifyToken(req, res, next) {
             })
         })
             .then(payload => {
-                console.log(payload)
-                console.log("PAYLOAD")
+
                 req.email = payload.email
                 next()
             })

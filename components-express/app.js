@@ -13,8 +13,11 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const apiUsersRouter = require('./routes/api/v1/apiusers')
 const reactRouter = require('./routes/react')
+const calendarRouter = require('./routes/calendar')
 
 const app = express();
+
+console.log(process.env.NODE_ENV)
 
 db.connect(app.locals)
   .then(dbConnection => {
@@ -31,14 +34,14 @@ db.connect(app.locals)
     app.use(cookieParser());
     
     app.use(express.static(path.join(__dirname, 'public')));
-    app.use(express.static(path.join(__dirname, 'react')));
 
     app.use(passport.initialize());
     
-    //app.use('/', indexRouter);
+    app.use('/', indexRouter);
     app.use('/users', usersRouter);
     app.use('/api/v1/users', apiUsersRouter)
-    app.use('/', reactRouter)
+    app.use('/react', reactRouter)
+    app.use('/calendar',calendarRouter)
     
     // catch 404 and forward to error handler
     app.use(function (req, res, next) {

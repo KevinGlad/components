@@ -1,6 +1,7 @@
 {
     "env": {
         "PORT": 3001,
-        "DEBUG": "components:*"
+        "DEBUG": "components:*",
+        "NODE_ENV": "development"
     }
 }

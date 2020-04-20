@@ -35,7 +35,7 @@ router.get('/:id', function (req, res, next) {
             res.json(response)
         })
         .catch(error => {
-            res.status(500).json(error)
+            res.status(500)
         })
 
 });
@@ -60,7 +60,7 @@ router.post('/signup', async function (req, res, next) {
             res.json(response)
         })
         .catch(error => {
-            res.status(500).json(error)
+            res.status(500)
         })
 
 });
@@ -93,7 +93,7 @@ router.put('/:id', function (req, res, next) {
             res.json(response)
         })
         .catch(error => {
-            res.status(500).json(error)
+            res.status(500)
         })
 });
 
@@ -220,7 +220,7 @@ router.patch('/:id', async function (req, res, next) {
 
     } catch (error) {
         console.log(error)
-        res.status(500).json(error)
+        res.status(500)
 
     }
 });

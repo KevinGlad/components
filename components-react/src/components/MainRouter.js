@@ -11,7 +11,7 @@ export default function MainRouter() {
 
     return (
         <div>
-            <Router>
+            <Router basename="/react">
                 <LoginProvider>
                     <AppBar></AppBar>
                     <Switch>

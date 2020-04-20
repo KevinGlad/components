@@ -2,6 +2,7 @@
   "name": "components",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/react",
   "dependencies": {
     "@material-ui/core": "^4.9.5",
     "@material-ui/icons": "^4.9.1",
@@ -16,11 +17,11 @@
     "react-scripts": "3.4.0"
   },
   "scripts": {
-    "start": "SET REACT_APP_TEST = testor & react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "postbuild": "copy-build C:/Helio/practice/projects/components/components-express/react"
+    "postbuild": "copy-build C:/Helio/practice/projects/components/components-express/public/react"
   },
   "eslintConfig": {
     "extends": "react-app"
